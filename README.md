@@ -2,7 +2,8 @@
     
 [![wakatime](https://wakatime.com/badge/github/tomas-trls/Punk-API.svg?style=for-the-badge)](https://wakatime.com/badge/github/tomas-trls/Punk-API?style=for-the-badge)
 </div>
-# Punk API
+
+# 🌟 Punk API 🍻
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
