@@ -1,8 +1,13 @@
 import React from "react";
-import "./FilterList";
+import FilterItem from "../../components/FilterItem/FilterItem";
+import "./FilterList.scss";
 
 const FilterList = () => {
-  return <div className="sidebar__filter-list">FilterList</div>;
+  return (
+    <div className="sidebar__filter-list">
+      <FilterItem />
+    </div>
+  );
 };
 
 export default FilterList;

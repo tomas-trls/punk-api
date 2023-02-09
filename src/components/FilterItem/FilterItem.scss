@@ -1,0 +1,16 @@
+@use "../../assets/sass/base/typography" as *;
+@use "../../assets/sass/abstracts/variables" as *;
+
+.filter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__label {
+    font-size: 1.4rem;
+  }
+
+  &__input {
+    width: 20px;
+    height: 20px;
+  }
+}

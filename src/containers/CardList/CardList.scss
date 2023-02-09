@@ -2,7 +2,9 @@
 @use "../../assets/sass/abstracts/variables" as *;
 
 .main__card-list {
-  max-width: 1400px;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  padding-left: 10px;
 }

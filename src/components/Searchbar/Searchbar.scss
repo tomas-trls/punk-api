@@ -1,0 +1,19 @@
+@use "../../assets/sass/base/typography" as *;
+@use "../../assets/sass/abstracts/variables" as *;
+
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+  &__input {
+    height: 35px;
+    width: 250px;
+    padding: 12px;
+    font-family: $font-main;
+    border: 2px solid $color-primary--dark;
+    border-radius: 0px 25px 25px 0px;
+    font-size: 1rem;
+  }
+}

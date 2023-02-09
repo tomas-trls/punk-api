@@ -16,7 +16,11 @@ const CardList = (props) => {
     );
   });
 
-  return <div className="main__card-list">{beersJSX}</div>;
+  return (
+    <>
+      <div className="main__card-list">{beersJSX}</div>
+    </>
+  );
 };
 
 export default CardList;

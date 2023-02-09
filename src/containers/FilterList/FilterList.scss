@@ -1,0 +1,10 @@
+@use "../../assets/sass/base/typography" as *;
+@use "../../assets/sass/abstracts/variables" as *;
+
+.sidebar__filter-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 180px;
+  width: 80%;
+}
