@@ -1,0 +1,8 @@
+@use "../../assets/sass/base/typography" as *;
+@use "../../assets/sass/abstracts/variables" as *;
+
+.main__card-list {
+  max-width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+}
