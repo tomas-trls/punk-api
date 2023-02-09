@@ -53,11 +53,13 @@
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-bottom: 5px;
-    width: 250px;
   }
 
   &__description {
     text-align: justify;
     overflow-y: hidden;
+    color: $color-primary--dark;
+    font-weight: 600;
+    text-shadow: 1px 0px 0px $color-black;
   }
 }
