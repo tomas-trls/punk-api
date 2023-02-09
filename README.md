@@ -1,3 +1,7 @@
+<div align="center">
+  
+[![wakatime](https://wakatime.com/badge/user/9bda9ad5-89a3-4159-9524-48a83f7579e4/project/dd1f643d-0bbf-4c66-873f-5f49e5ba2990.svg)](https://wakatime.com/badge/user/9bda9ad5-89a3-4159-9524-48a83f7579e4/project/dd1f643d-0bbf-4c66-873f-5f49e5ba2990)
+</div>
 # Punk API
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
