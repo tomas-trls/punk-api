@@ -2,25 +2,36 @@
 @use "../../assets/sass/base/typography" as *;
 
 .card {
-  margin: 20px auto;
+  margin: 20px 5px;
   border-radius: 12px;
   width: 400px;
   height: 470px;
   font-family: $font-main;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background: linear-gradient(
-    200deg,
-    $color-primary--dark,
-    $color-primary--dark,
-    $color-secondary,
-    $color-primary,
-    $color-primary--light
-  );
-  background-size: 400%;
-  animation: gradient 5s ease-in-out infinite;
-
+  background-color: $color-primary--dark;
+  &__front {
+    transform: translate(0, -8px);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: linear-gradient(
+      200deg,
+      $color-primary--dark,
+      $color-primary--dark,
+      $color-secondary,
+      $color-primary,
+      $color-primary--light
+    );
+    background-size: 400%;
+    animation: gradient 5s ease-in-out infinite;
+    transition: ease 300ms;
+    &:hover {
+      transform: translateY(-12px);
+    }
+  }
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -40,11 +51,11 @@
 
   &__text {
     color: $color-white;
-    height: 110px;
+    height: 80px;
     padding: 0 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   &__title {
@@ -52,14 +63,13 @@
     font-weight: 800;
     font-size: 1.5rem;
     text-transform: uppercase;
-    margin-bottom: 5px;
   }
 
   &__description {
+    font-size: 1.3rem;
     text-align: justify;
-    overflow-y: hidden;
-    color: $color-primary--dark;
-    font-weight: 600;
-    text-shadow: 1px 0px 0px $color-black;
+    color: $color-white;
+    font-weight: 500;
+    text-shadow: 1px 0px 0px $color-primary--dark;
   }
 }
