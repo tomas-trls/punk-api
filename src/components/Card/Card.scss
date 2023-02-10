@@ -2,6 +2,9 @@
 @use "../../assets/sass/base/typography" as *;
 
 .card {
+  &__link {
+    text-decoration: none;
+  }
   margin: 20px 5px;
   border-radius: 12px;
   width: 400px;
@@ -50,6 +53,7 @@
   }
 
   &__text {
+    text-decoration: none;
     color: $color-white;
     height: 80px;
     padding: 0 15px;
@@ -65,7 +69,7 @@
     text-transform: uppercase;
   }
 
-  &__description {
+  &__tagline {
     font-size: 1.3rem;
     text-align: justify;
     color: $color-white;

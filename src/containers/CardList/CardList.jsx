@@ -1,18 +1,20 @@
 import React from "react";
 import Card from "../../components/Card/Card";
 import "./CardList.scss";
+import { Link } from "react-router-dom";
 
 const CardList = (props) => {
   const { beersArr } = props;
 
   const beersJSX = beersArr.map((beer) => {
     return (
-      <Card
-        key={beer.id}
-        beerName={beer.name}
-        beerImage={beer.image_url}
-        beerTagline={beer.tagline}
-      />
+      <Link to={`/beer/${beer.id}`} key={beer.id} className="card__link">
+        <Card
+          beerName={beer.name}
+          beerImage={beer.image_url}
+          beerTagline={beer.tagline}
+        />
+      </Link>
     );
   });
 

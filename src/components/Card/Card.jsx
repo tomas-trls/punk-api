@@ -8,12 +8,12 @@ const Card = (props) => {
       <span className="card__front">
         <img
           src={beerImage}
-          alt={`A detailed image of ${beerName}  `}
+          alt={`A detailed bottle of ${beerName}  `}
           className="card__image"
         />
         <div className="card__text">
           <h3 className="card__title">{beerName}</h3>
-          <p className="card__description">
+          <p className="card__tagline">
             <em>{beerTagline}</em>
           </p>
         </div>
