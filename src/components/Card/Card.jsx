@@ -2,9 +2,9 @@ import React from "react";
 import "./Card.scss";
 
 const Card = (props) => {
-  const { beerName, beerImage, beerTagline, key } = props;
+  const { beerName, beerImage, beerTagline } = props;
   return (
-    <div className="main__card card" key={key}>
+    <div className="main__card card">
       <span className="card__front">
         <img
           src={beerImage}

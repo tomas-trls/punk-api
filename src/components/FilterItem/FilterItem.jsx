@@ -1,7 +1,10 @@
 import React from "react";
 import "./FilterItem.scss";
 
-const FilterItem = () => {
+const FilterItem = (props) => {
+  const { handleSortHighAlcohol, handleSortClassicRange, handleAcidity } =
+    props;
+
   return (
     <>
       <div className="sidebar__filter-item filter-item">
@@ -13,6 +16,7 @@ const FilterItem = () => {
           type="checkbox"
           name="high-alcohol"
           id="high-alcohol"
+          onChange={handleSortHighAlcohol}
         />
       </div>
       <div className="sidebar__filter-item filter-item">
@@ -24,6 +28,7 @@ const FilterItem = () => {
           type="checkbox"
           name="classic"
           id="classic"
+          onChange={handleSortClassicRange}
         />
       </div>
       <div className="sidebar__filter-item filter-item">
@@ -35,6 +40,7 @@ const FilterItem = () => {
           type="checkbox"
           name="acidicity"
           id="acidicity"
+          onChange={handleAcidity}
         />
       </div>
     </>
