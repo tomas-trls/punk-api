@@ -3,6 +3,7 @@ import "./App.scss";
 import Main from "./containers/Main/Main";
 import Sidebar from "./containers/Sidebar/Sidebar";
 import beers from "./data/punk";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   const [beersCard, setBeersCard] = useState(beers);
