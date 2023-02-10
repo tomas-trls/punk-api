@@ -2,10 +2,17 @@ import React from "react";
 import FilterItem from "../../components/FilterItem/FilterItem";
 import "./FilterList.scss";
 
-const FilterList = () => {
+const FilterList = (props) => {
+  const { handleSortHighAlcohol, handleSortClassicRange, handleAcidity } =
+    props;
+
   return (
     <div className="sidebar__filter-list">
-      <FilterItem />
+      <FilterItem
+        handleSortHighAlcohol={handleSortHighAlcohol}
+        handleSortClassicRange={handleSortClassicRange}
+        handleAcidity={handleAcidity}
+      />
     </div>
   );
 };
