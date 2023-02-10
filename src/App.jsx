@@ -3,19 +3,22 @@ import "./App.scss";
 import Main from "./containers/Main/Main";
 import Sidebar from "./containers/Sidebar/Sidebar";
 import beers from "./data/punk";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CardInfo from "./containers/CardInfo/CardInfo";
 
 const App = () => {
   const [beersCard, setBeersCard] = useState(beers);
+  const [checkedBeers, setCheckedBeers] = useState(beers);
 
   const handleSearch = (event) => {
-    const filterArrByNames = beers.filter((beer) => {
+    const filterArrByNames = checkedBeers.filter((beer) => {
       return beer.name.toLowerCase().includes(event.target.value.toLowerCase());
     });
     if (event.target.value) {
       setBeersCard(filterArrByNames);
     } else {
-      setBeersCard(beers);
+      setBeersCard(checkedBeers);
     }
   };
 
@@ -25,8 +28,10 @@ const App = () => {
     });
     if (event.target.checked) {
       setBeersCard(filterArrByABV);
+      setCheckedBeers(filterArrByABV);
     } else {
       setBeersCard(beers);
+      setCheckedBeers(beers);
     }
   };
 
@@ -41,30 +46,49 @@ const App = () => {
       setBeersCard(filterArrByYear);
     } else {
       setBeersCard(beers);
+      setCheckedBeers(beers);
     }
   };
 
   const handleAcidity = (event) => {
     const filterArrByAcidity = beers.filter((beer) => {
-      return beer.ph < 4;
+      if (beer.ph) {
+        return beer.ph < 4;
+      }
     });
 
     if (event.target.checked) {
       setBeersCard(filterArrByAcidity);
     } else {
       setBeersCard(beers);
+      setCheckedBeers(beers);
     }
   };
 
   return (
     <div className="App beers">
-      <Sidebar
-        handleSearch={handleSearch}
-        handleSortHighAlcohol={handleSortHighAlcohol}
-        handleSortClassicRange={handleSortClassicRange}
-        handleAcidity={handleAcidity}
-      />
-      <Main beersArr={beersCard} />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Sidebar
+                  handleSearch={handleSearch}
+                  handleSortHighAlcohol={handleSortHighAlcohol}
+                  handleSortClassicRange={handleSortClassicRange}
+                  handleAcidity={handleAcidity}
+                />{" "}
+                <Main beersArr={beersCard} />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/beer/:beerId"
+            element={<CardInfo beersArr={beersCard} />}
+          />
+        </Routes>
+      </Router>
     </div>
   );
 };
