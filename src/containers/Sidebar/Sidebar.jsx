@@ -3,10 +3,11 @@ import Searchbar from "../../components/Searchbar/Searchbar";
 import FilterList from "../FilterList/FilterList";
 import "./Sidebar.scss";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+  const { handleSearch } = props;
   return (
     <div className="beers__sidebar sidebar">
-      <Searchbar />
+      <Searchbar handleSearch={handleSearch} />
       <FilterList />
     </div>
   );
