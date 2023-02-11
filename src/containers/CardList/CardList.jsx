@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Card from "../../components/Card/Card";
 import "./CardList.scss";
-import { Link } from "react-router-dom";
 
 const CardList = (props) => {
   const { beersArr } = props;

@@ -1,6 +1,6 @@
-import "./CardInfo.scss";
 import React from "react";
 import { useParams } from "react-router";
+import "./CardInfo.scss";
 
 const CardInfo = (props) => {
   const { beersArr } = props;
