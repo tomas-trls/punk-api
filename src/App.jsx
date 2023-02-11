@@ -8,62 +8,35 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CardInfo from "./containers/CardInfo/CardInfo";
 
 const App = () => {
-  const [beersCard, setBeersCard] = useState(beers);
-  const [checkedBeers, setCheckedBeers] = useState(beers);
+  const [searchText, setSearchText] = useState("");
+  const [beersByABV, setBeersByABV] = useState(false);
+  const [beersByYear, setBeersByYear] = useState(false);
+  const [beersByAcidity, setBeersByAcidity] = useState(false);
 
-  const handleSearch = (event) => {
-    const filterArrByNames = checkedBeers.filter((beer) => {
-      return beer.name.toLowerCase().includes(event.target.value.toLowerCase());
-    });
-    if (event.target.value) {
-      setBeersCard(filterArrByNames);
-    } else {
-      setBeersCard(checkedBeers);
-    }
-  };
+  const handleSearch = (event) => setSearchText(event.target.value);
 
-  const handleSortHighAlcohol = (event) => {
-    const filterArrByABV = beers.filter((beer) => {
-      return beer.abv > 6;
-    });
-    if (event.target.checked) {
-      setBeersCard(filterArrByABV);
-      setCheckedBeers(filterArrByABV);
-    } else {
-      setBeersCard(beers);
-      setCheckedBeers(beers);
-    }
-  };
+  const handleSortHighAlcohol = (event) => setBeersByABV(event.target.checked);
 
-  const handleSortClassicRange = (event) => {
-    const filterArrByYear = beers.filter((beer) => {
-      const firstBrewed = beer.first_brewed.split("/");
-      const dateBrewed = new Date(firstBrewed[1] + "/" + firstBrewed[0]);
-      return dateBrewed.getFullYear() < 2010;
-    });
+  const handleSortClassicRange = (event) =>
+    setBeersByYear(event.target.checked);
 
-    if (event.target.checked) {
-      setBeersCard(filterArrByYear);
-    } else {
-      setBeersCard(beers);
-      setCheckedBeers(beers);
-    }
-  };
+  const handleAcidity = (event) => setBeersByAcidity(event.target.checked);
 
-  const handleAcidity = (event) => {
-    const filterArrByAcidity = beers.filter((beer) => {
-      if (beer.ph) {
-        return beer.ph < 4;
-      }
-    });
-
-    if (event.target.checked) {
-      setBeersCard(filterArrByAcidity);
-    } else {
-      setBeersCard(beers);
-      setCheckedBeers(beers);
-    }
-  };
+  const filterBeers = beers
+    .filter((beer) =>
+      beer.name.toLowerCase().includes(searchText.toLowerCase())
+    )
+    .filter((beer) => !beersByABV || beer.abv > 6)
+    .filter(
+      (beer) =>
+        !beersByYear ||
+        new Date(
+          beer.first_brewed.split("/")[1] +
+            "/" +
+            beer.first_brewed.split("/")[0]
+        ).getFullYear() < 2010
+    )
+    .filter((beer) => !beersByAcidity || beer.ph < 4);
 
   return (
     <div className="App beers">
@@ -79,14 +52,11 @@ const App = () => {
                   handleSortClassicRange={handleSortClassicRange}
                   handleAcidity={handleAcidity}
                 />{" "}
-                <Main beersArr={beersCard} />
+                <Main beersArr={filterBeers} />
               </>
             }
           ></Route>
-          <Route
-            path="/beer/:beerId"
-            element={<CardInfo beersArr={beersCard} />}
-          />
+          <Route path="/beer/:beerId" element={<CardInfo beersArr={beers} />} />
         </Routes>
       </Router>
     </div>
