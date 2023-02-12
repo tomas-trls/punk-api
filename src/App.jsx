@@ -44,7 +44,7 @@ const App = () => {
                   handleSortHighAlcohol={handleSortHighAlcohol}
                   handleSortClassicRange={handleSortClassicRange}
                   handleAcidity={handleAcidity}
-                />{" "}
+                />
                 <Main beersArr={filterBeers} />
               </>
             }
