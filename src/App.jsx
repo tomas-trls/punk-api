@@ -14,6 +14,14 @@ const App = () => {
   const [beersByYear, setBeersByYear] = useState(false);
   const [beersByAcidity, setBeersByAcidity] = useState(false);
 
+  // const [beerEEE, setBeers] = useState();
+
+  // const getBeers = async () => {
+  //   const res = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80");
+  //   const data = await res.json();
+  //   setBeers(data);
+  // };
+
   const handleSearch = (event) => setSearchText(event.target.value);
   const handleSortHighAlcohol = (event) => setBeersByABV(event.target.checked);
   const handleSortClassicRange = (event) => setBeersByYear(event.target.checked);
@@ -29,7 +37,7 @@ const App = () => {
           beer.first_brewed.split("/")[1] + "/" + beer.first_brewed.split("/")[0]
         ).getFullYear() < 2010
     )
-    .filter((beer) => !beersByAcidity || beer.ph < 4);
+    .filter((beer) => !beersByAcidity || (beer.ph && beer.ph < 4));
 
   return (
     <div className="App beers">
@@ -44,8 +52,9 @@ const App = () => {
                   handleSortHighAlcohol={handleSortHighAlcohol}
                   handleSortClassicRange={handleSortClassicRange}
                   handleAcidity={handleAcidity}
+                  // getBeers={getBeers}
                 />
-                <Main beersArr={filterBeers} />
+                {beers && <Main beersArr={filterBeers} />}
               </>
             }
           ></Route>

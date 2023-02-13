@@ -764,8 +764,7 @@ const beers = [
           unit: "celsius",
         },
       },
-      twist:
-        "Aged in whisky barrels with raspberries, tayberries and blackberries",
+      twist: "Aged in whisky barrels with raspberries, tayberries and blackberries",
     },
     ingredients: {
       malt: [
@@ -1853,8 +1852,7 @@ const beers = [
   {
     id: 15,
     name: "Mixtape 8",
-    tagline:
-      "An Epic Fusion Of Old Belgian, American New Wave, And Scotch Whisky.",
+    tagline: "An Epic Fusion Of Old Belgian, American New Wave, And Scotch Whisky.",
     first_brewed: "01/2012",
     description:
       "This recipe is for the Belgian Tripel base. A blend of two huge oak aged beers – half a hopped up Belgian Tripel, and half a Triple India Pale Ale. Both aged in single grain whisky barrels for two years and blended, each beer brings its own character to the mix. The Belgian Tripel comes loaded with complex spicy, fruity esters, and punchy citrus hop character.",
@@ -2134,11 +2132,7 @@ const beers = [
       ],
       yeast: "Wyeast 1056 - American Ale™",
     },
-    food_pairing: [
-      "Blue cheese beef burger",
-      "Glazed short ribs",
-      "Chocolate cake",
-    ],
+    food_pairing: ["Blue cheese beef burger", "Glazed short ribs", "Chocolate cake"],
     brewers_tips:
       "Mash in at a higher temperature to leave more unfermentable sugars in the wort. This gives the beer a sweeter porter profile.",
     contributed_by: "Sam Mason <samjbmason>",

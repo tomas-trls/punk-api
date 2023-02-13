@@ -10,9 +10,9 @@
   width: 400px;
   height: 470px;
   font-family: $font-main;
-  background-color: $color-primary--dark;
+  background-color: $color-secondary;
   &__front {
-    transform: translateY(-8px);
+    transform: translateY(0px);
     position: relative;
     height: 100%;
     width: 100%;
@@ -22,21 +22,9 @@
     justify-content: space-around;
     align-items: flex-start;
     background-color: $color-white;
-    // background: linear-gradient(to bottom, $color-white, #b5e4ec);
     transition: ease 300ms;
     &:hover {
       transform: translateY(-12px);
-    }
-  }
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
     }
   }
   &__image {
@@ -56,12 +44,24 @@
     width: 90%;
     height: 320px;
     object-fit: contain;
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
 
   &__text {
     position: relative;
     top: 13px;
-    background-color: $color-primary;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://img.freepik.com/free-photo/original-black-leather-texture-background_24972-1600.jpg");
     border-radius: 0px 0px 12px 12px;
     width: 100%;
     text-decoration: none;
