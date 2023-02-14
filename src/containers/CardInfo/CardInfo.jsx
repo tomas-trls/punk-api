@@ -171,9 +171,11 @@ const CardInfo = (props) => {
       </details>
       <details className="card-info__food-pairings">
         <summary className="card-info__food-pairings--header">Food Pairings</summary>
-        <p className="card-info__food-parings--text">
-          If you are looking for nice foods that would match this beer, we recommend
-          some meals like:{" "}
+        <p className="card-info__food-pairings--text">
+          <em>
+            If you are looking for some nice foods that would match this{" "}
+            <strong>beer</strong>, we recommend a few meals like:
+          </em>
         </p>
         <ul>{getFoodPairingJSX}</ul>
       </details>

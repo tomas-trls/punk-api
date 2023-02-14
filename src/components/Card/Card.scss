@@ -19,7 +19,7 @@
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     background-color: $color-white;
     transition: ease 300ms;
@@ -28,6 +28,8 @@
     }
   }
   &__image {
+    position: relative;
+    top: 2px;
     border-radius: 4px;
     padding: 25px;
     align-self: center;
