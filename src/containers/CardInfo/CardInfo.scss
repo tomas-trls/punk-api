@@ -2,12 +2,13 @@
 @use "../../assets/sass/base/typography" as *;
 
 .card-info {
+  height: 100vh;
   font-family: "Inter", sans-serif;
   margin: 15px auto;
   width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   &__image-container {
@@ -15,11 +16,35 @@
     height: 550px;
     background-color: $color-white;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     border-radius: 16px 16px 0 0;
   }
+
+  &__nav-arrow {
+    z-index: 5;
+    align-self: start;
+    position: relative;
+    top: 35px;
+    left: 25px;
+    transition: 500ms;
+    &--image {
+      height: 25px;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+    @media screen and (min-width: 576px) {
+      top: 15px;
+      left: 25px;
+    }
+  }
+
   &__image {
+    border-radius: 8px;
+    padding: 25px;
     position: relative;
     top: -10px;
     object-fit: contain;
@@ -33,7 +58,7 @@
     );
     background-size: 400%;
     animation: gradient 5s ease-in-out infinite;
-    width: 500px;
+    width: 100%;
     height: 500px;
     object-fit: contain;
     @keyframes gradient {
@@ -46,6 +71,9 @@
       100% {
         background-position: 0% 50%;
       }
+    }
+    @media screen and (min-width: 576px) {
+      width: 500px;
     }
   }
 
@@ -63,10 +91,10 @@
   }
 
   &__title {
-    font-weight: 800;
     text-transform: uppercase;
     font-size: 2.2rem;
     text-shadow: 2px 2px $color-primary;
+    font-family: $font-header;
   }
 
   &__tagline {
@@ -89,19 +117,20 @@
     background-color: $color-white;
     border-radius: 16px;
     display: grid;
-    grid-template: 1fr / repeat(auto-fill, 270px);
+    grid-template: 1fr / repeat(auto-fill, 80%);
     justify-content: center;
   }
 
   &__stat {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 12px 0;
     width: 100%;
     justify-self: center;
     text-transform: uppercase;
+    text-align: center;
     font-weight: 600;
 
     &:nth-child(2) {
@@ -130,6 +159,77 @@
         border-right: 2px solid #e0e0d9;
         border-left: 2px solid #e0e0d9;
       }
+    }
+  }
+
+  &__ingredients {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 0 15px;
+    &--title {
+      align-self: flex-start;
+      font-family: $font-header;
+      font-size: 1.5rem;
+    }
+  }
+  &__ingredient {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 35px;
+    &--header {
+      font-family: $font-header;
+      font-size: 1.25rem;
+      margin: 25px 0 5px;
+      &:nth-child(1) {
+        margin: 10px 0 5px;
+      }
+    }
+
+    &--data {
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__food-pairings {
+    width: 100%;
+    &--header {
+      font-family: $font-header;
+      font-size: 1.4rem;
+      margin: 0px 0 8px;
+    }
+    &--data {
+      margin: 5px 0px 0 35px;
+    }
+  }
+
+  &__brewers-tips {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-primary--light;
+    align-items: flex-start;
+    padding: 15px 50px;
+    width: 100%;
+    border-radius: 16px;
+    &--header {
+      font-family: $font-header;
+      margin-bottom: 5px;
+    }
+
+    @media screen and (min-width: 1048px) {
+      max-width: 60%;
     }
   }
 }

@@ -75,13 +75,13 @@
 
   &__title {
     text-shadow: 3px 3px 6px $color-primary--dark;
-    font-weight: 800;
     font-size: 1.5rem;
     text-transform: uppercase;
+    font-family: $font-header;
   }
 
   &__tagline {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-align: justify;
     color: $color-white;
     font-weight: 500;
