@@ -188,9 +188,12 @@
         margin: 10px 0 5px;
       }
     }
-
+    &--added-time {
+      font-family: $font-header;
+      padding: 4px 10px;
+    }
     &--data {
-      padding: 0 10px;
+      padding: 0 20px;
       display: flex;
       flex-direction: column;
     }

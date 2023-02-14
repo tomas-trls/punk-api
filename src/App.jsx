@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
@@ -6,7 +6,7 @@ import CardInfo from "./containers/CardInfo/CardInfo";
 import Main from "./containers/Main/Main";
 import Sidebar from "./containers/Sidebar/Sidebar";
 
-import beers from "./data/punk";
+import beersArr from "./data/punk";
 
 const App = () => {
   const [searchText, setSearchText] = useState("");
@@ -14,20 +14,31 @@ const App = () => {
   const [beersByYear, setBeersByYear] = useState(false);
   const [beersByAcidity, setBeersByAcidity] = useState(false);
 
-  // const [beerEEE, setBeers] = useState();
+  const [beers, setBeers] = useState(beersArr);
 
-  // const getBeers = async () => {
-  //   const res = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80");
-  //   const data = await res.json();
-  //   setBeers(data);
-  // };
+  const [rangeInput, setRangeInput] = useState();
+
+  useEffect(() => {
+    const getBeers = async () => {
+      const url = "https://api.punkapi.com/v2/beers";
+      const res = await fetch(url + "?page=3&per_page=80");
+      const data = await res.json();
+      setBeers(data);
+    };
+    getBeers();
+  }, []);
 
   const handleSearch = (event) => setSearchText(event.target.value);
   const handleSortHighAlcohol = (event) => setBeersByABV(event.target.checked);
   const handleSortClassicRange = (event) => setBeersByYear(event.target.checked);
   const handleAcidity = (event) => setBeersByAcidity(event.target.checked);
 
+  const handleRange = (event) => {
+    setRangeInput(event.target.value);
+  };
+
   const filterBeers = beers
+    .filter((beer) => beer.image_url)
     .filter((beer) => beer.name.toLowerCase().includes(searchText.toLowerCase()))
     .filter((beer) => !beersByABV || beer.abv > 6)
     .filter(
@@ -52,7 +63,11 @@ const App = () => {
                   handleSortHighAlcohol={handleSortHighAlcohol}
                   handleSortClassicRange={handleSortClassicRange}
                   handleAcidity={handleAcidity}
-                  // getBeers={getBeers}
+                  labels={["Alcohol by Volume", "First Brewed", "Acidity"]}
+                  min={0}
+                  max={10}
+                  value={rangeInput}
+                  handleRange={handleRange}
                 />
                 {beers && <Main beersArr={filterBeers} />}
               </>
