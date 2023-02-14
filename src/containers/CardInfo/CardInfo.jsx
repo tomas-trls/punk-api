@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import arrow from "../../assets/images/u-turn-left-arrow.png";
 import "./CardInfo.scss";
 
 const CardInfo = (props) => {
@@ -18,10 +20,10 @@ const CardInfo = (props) => {
       unit = "g";
     }
     return (
-      <div className="card-info__hops" key={index + 1}>
-        <p className="card-info__hops--name">{m.name}</p>
-        <div className="card-info__hops--amount">
-          <p className="card-info__hops--value">
+      <div className="card-info__ingredient-item" key={index + 1}>
+        <p className="card-info__ingredient-item--name">{m.name}</p>
+        <div className="card-info__ingredient-item--amount">
+          <p className="card-info__ingredient-item--value">
             {m.amount.value} {unit}
           </p>
         </div>
@@ -37,10 +39,10 @@ const CardInfo = (props) => {
       unit = "g";
     }
     return (
-      <div className="card-info__malt" key={index + 1}>
-        <p className="card-info__malt--name">{m.name}</p>
-        <div className="card-info__malt--amount">
-          <p className="card-info__malt--value">
+      <div className="card-info__ingredient-item" key={index + 1}>
+        <p className="card-info__ingredient-item--name">{m.name}</p>
+        <div className="card-info__ingredient-item--amount">
+          <p className="card-info__ingredient-item--value">
             {m.amount.value} {unit}
           </p>
         </div>
@@ -48,9 +50,24 @@ const CardInfo = (props) => {
     );
   });
 
+  const getFoodPairingJSX = getBeer.food_pairing.map((food, index) => {
+    return (
+      <li className="card-info__food-pairings--data" key={index + 1}>
+        {food}
+      </li>
+    );
+  });
+
   return (
     <div className="card-info">
       <figure className="card-info__image-container">
+        <Link to="/" className="card-info__nav-arrow">
+          <img
+            src={arrow}
+            alt="arrow to go back to main menu"
+            className="card-info__nav-arrow--image"
+          />
+        </Link>
         <img
           src={getBeer.image_url}
           alt={`A detailed bottle of ${getBeer.name}  `}
@@ -64,7 +81,7 @@ const CardInfo = (props) => {
       <div className="card-info__description">{getBeer.description}</div>
       <div className="card-info__stats-container">
         <div className="card-info__stat">
-          <div className="card-info__stat--label">ABV</div>
+          <div className="card-info__stat--label">Alcohol by Volume</div>
           <div className="card-info__stat--value">{getBeer.abv}%</div>
         </div>
         <div className="card-info__stat">
@@ -76,14 +93,30 @@ const CardInfo = (props) => {
           <div className="card-info__stat--value">{getBeer.ph}</div>
         </div>
       </div>
-      <div className="card-info__ingredients">
-        <h3 className="card-info__ingredients--title">Ingredients</h3>
-        <div className="card-info__malts">
-          <h4 className="card-info__ingredients--header">Hops</h4>
-          <p className="card-info__ingredients--data">{getHopsJSX}</p>
-          <h4 className="card-info__ingredients--header">Malts</h4>
-          <p className="card-info__ingredients--data">{getMaltJSX}</p>
+      <details className="card-info__ingredients">
+        <summary className="card-info__ingredients--title">Ingredients</summary>
+        <div className="card-info__ingredient">
+          <h3 className="card-info__ingredient--header">Hops</h3>
+          <div className="card-info__ingredient--data">{getHopsJSX}</div>
+          <h3 className="card-info__ingredient--header">Malts</h3>
+          <div className="card-info__ingredient--data">{getMaltJSX}</div>
+          <h3 className="card-info__ingredient--header">Yeast</h3>
+          <div className="card-info__ingredient--data">
+            {getBeer.ingredients.yeast}
+          </div>
         </div>
+      </details>
+      <details className="card-info__food-pairings">
+        <summary className="card-info__food-pairings--header">Food Pairings</summary>
+        <p className="card-info__food-parings--text">
+          If you are looking for nice foods that would match this beer, we recommend
+          some meals like:{" "}
+        </p>
+        <ul>{getFoodPairingJSX}</ul>
+      </details>
+      <div className="card-info__brewers-tips">
+        <h2 className="card-info__brewers-tips--header">Brewers Tips</h2>
+        <p className="card-info__brewers-tips--text">{getBeer.brewers_tips}</p>
       </div>
     </div>
   );
