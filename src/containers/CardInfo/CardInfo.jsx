@@ -61,6 +61,7 @@ const CardInfo = (props) => {
         <h2 className="card-info__title">{getBeer.name}</h2>
         <p className="card-info__tagline">{getBeer.tagline}</p>
       </div>
+      <div className="card-info__description">{getBeer.description}</div>
       <div className="card-info__stats-container">
         <div className="card-info__stat">
           <div className="card-info__stat--label">ABV</div>
