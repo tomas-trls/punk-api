@@ -12,25 +12,83 @@ const CardInfo = (props) => {
     return beer.id === Number.parseInt(beerId);
   })[0];
 
-  const getHopsJSX = getBeer.ingredients.hops.map((m, index) => {
+  let startArr = [];
+  let middleArr = [];
+  let endArr = [];
+
+  getBeer.ingredients.hops.forEach((h) => {
+    if (h.add === "start") {
+      startArr.push(h);
+      console.log(h);
+    } else if (h.add === "middle") {
+      middleArr.push(h);
+    } else {
+      endArr.push(h);
+    }
+  });
+
+  const startArrJSX = startArr.map((ingredient, index) => {
     let unit = "";
-    if (m.amount.unit === "kilograms") {
+    if (ingredient.amount.unit === "kilograms") {
       unit = "kg";
-    } else if (m.amount.unit === "grams") {
+    } else if (ingredient.amount.unit === "grams") {
       unit = "g";
     }
     return (
       <div className="card-info__ingredient-item" key={index + 1}>
-        <p className="card-info__ingredient-item--name">{m.name}</p>
+        <p key={index + 1} className="card-info__ingredient-item--name">
+          {ingredient.name}
+        </p>
         <div className="card-info__ingredient-item--amount">
           <p className="card-info__ingredient-item--value">
-            {m.amount.value} {unit}
+            {ingredient.amount.value} {unit}
           </p>
         </div>
       </div>
     );
   });
 
+  const middleArrJSX = middleArr.map((ingredient, index) => {
+    let unit = "";
+    if (ingredient.amount.unit === "kilograms") {
+      unit = "kg";
+    } else if (ingredient.amount.unit === "grams") {
+      unit = "g";
+    }
+    return (
+      <div className="card-info__ingredient-item" key={index + 1}>
+        <p key={index + 1} className="card-info__ingredient-item--name">
+          {ingredient.name}
+        </p>
+        <div className="card-info__ingredient-item--amount">
+          <p className="card-info__ingredient-item--value">
+            {ingredient.amount.value} {unit}
+          </p>
+        </div>
+      </div>
+    );
+  });
+
+  const endArrJSX = endArr.map((ingredient, index) => {
+    let unit = "";
+    if (ingredient.amount.unit === "kilograms") {
+      unit = "kg";
+    } else if (ingredient.amount.unit === "grams") {
+      unit = "g";
+    }
+    return (
+      <div className="card-info__ingredient-item" key={index + 1}>
+        <p key={index + 1} className="card-info__ingredient-item--name">
+          {ingredient.name}
+        </p>
+        <div className="card-info__ingredient-item--amount">
+          <p className="card-info__ingredient-item--value">
+            {ingredient.amount.value} {unit}
+          </p>
+        </div>
+      </div>
+    );
+  });
   const getMaltJSX = getBeer.ingredients.malt.map((m, index) => {
     let unit = "";
     if (m.amount.unit === "kilograms") {
@@ -97,7 +155,12 @@ const CardInfo = (props) => {
         <summary className="card-info__ingredients--title">Ingredients</summary>
         <div className="card-info__ingredient">
           <h3 className="card-info__ingredient--header">Hops</h3>
-          <div className="card-info__ingredient--data">{getHopsJSX}</div>
+          <h4 className="card-info__ingredient--added-time">Added at the Start</h4>
+          <div className="card-info__ingredient--data">{startArrJSX}</div>
+          <h4 className="card-info__ingredient--added-time">Added in the Middle</h4>
+          <div className="card-info__ingredient--data">{middleArrJSX}</div>
+          <h4 className="card-info__ingredient--added-time">Added at the End</h4>
+          <div className="card-info__ingredient--data">{endArrJSX}</div>
           <h3 className="card-info__ingredient--header">Malts</h3>
           <div className="card-info__ingredient--data">{getMaltJSX}</div>
           <h3 className="card-info__ingredient--header">Yeast</h3>

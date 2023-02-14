@@ -24,7 +24,7 @@
     background-color: $color-white;
     transition: ease 300ms;
     &:hover {
-      transform: translateY(-12px);
+      transform: translateY(-16px);
     }
   }
   &__image {
@@ -67,7 +67,7 @@
     text-decoration: none;
     color: $color-white;
     height: 80px;
-    padding: 50px 15px;
+    padding: 65px 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
