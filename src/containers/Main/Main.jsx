@@ -15,6 +15,7 @@ const Main = (props) => {
           onClick={handleMobileNav}
         />
       </figure>
+      <h1 className="main__title">🎸 Punk Api 🍻</h1>
       <CardList beersArr={beersArr} />
     </div>
   );
