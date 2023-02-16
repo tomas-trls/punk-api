@@ -15,13 +15,13 @@ const FilterList = ({
 }) => {
   return (
     <div className="sidebar__filter-list">
-      <RangeInput
+      {/* <RangeInput
         labels={labels}
         min={min}
         max={max}
         value={value}
         onChange={handleInput}
-      />
+      /> */}
       <FilterItem
         handleSortHighAlcohol={handleSortHighAlcohol}
         handleSortClassicRange={handleSortClassicRange}

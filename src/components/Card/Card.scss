@@ -3,14 +3,16 @@
 
 .card {
   &__link {
+    flex-shrink: 0;
     text-decoration: none;
+    display: block;
+    border-radius: 12px;
+    width: 90%;
+    height: 470px;
+    font-family: $font-main;
+    background-color: $color-secondary;
+    margin: 20px auto;
   }
-  margin: 20px 5px;
-  border-radius: 12px;
-  width: 400px;
-  height: 470px;
-  font-family: $font-main;
-  background-color: $color-secondary;
   &__front {
     transform: translateY(0px);
     position: relative;
@@ -88,5 +90,25 @@
     color: $color-white;
     font-weight: 500;
     text-shadow: 1px 0px 0px $color-primary--dark;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .card {
+    &__link {
+      margin: 20px auto;
+      width: 400px;
+    }
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 868px) {
+  .card {
+    &__link {
+      margin: 20px 8px;
+      width: 400px;
+    }
+    width: 100%;
   }
 }
