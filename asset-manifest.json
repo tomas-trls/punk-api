@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/punk-api/static/css/main.92f3ed1e.css",
-    "main.js": "/punk-api/static/js/main.66330c69.js",
+    "main.css": "/punk-api/static/css/main.5b8aec94.css",
+    "main.js": "/punk-api/static/js/main.a49022b9.js",
     "static/js/787.ae7c3095.chunk.js": "/punk-api/static/js/787.ae7c3095.chunk.js",
     "static/media/SpaceGrotesk-Bold.otf": "/punk-api/static/media/SpaceGrotesk-Bold.84491a7b22b78320f103.otf",
     "index.html": "/punk-api/index.html",
-    "main.92f3ed1e.css.map": "/punk-api/static/css/main.92f3ed1e.css.map",
-    "main.66330c69.js.map": "/punk-api/static/js/main.66330c69.js.map",
+    "static/media/cross.svg": "/punk-api/static/media/cross.c116baf9543868539c0df88cb2c7ca1d.svg",
+    "static/media/menu.svg": "/punk-api/static/media/menu.5181571974fa8c324ee81bf69f4af86f.svg",
+    "main.5b8aec94.css.map": "/punk-api/static/css/main.5b8aec94.css.map",
+    "main.a49022b9.js.map": "/punk-api/static/js/main.a49022b9.js.map",
     "787.ae7c3095.chunk.js.map": "/punk-api/static/js/787.ae7c3095.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92f3ed1e.css",
-    "static/js/main.66330c69.js"
+    "static/css/main.5b8aec94.css",
+    "static/js/main.a49022b9.js"
   ]
 }
