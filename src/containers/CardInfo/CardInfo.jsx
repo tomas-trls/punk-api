@@ -19,7 +19,6 @@ const CardInfo = (props) => {
   getBeer.ingredients.hops.forEach((h) => {
     if (h.add === "start") {
       startArr.push(h);
-      console.log(h);
     } else if (h.add === "middle") {
       middleArr.push(h);
     } else {

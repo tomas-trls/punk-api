@@ -60,23 +60,7 @@
       cursor: pointer;
       animation: jump 1s;
       animation-fill-mode: forwards;
-      @keyframes jump {
-        0% {
-          top: 25px;
-        }
-        25% {
-          top: 16px;
-        }
-        50% {
-          top: 25px;
-        }
-        75% {
-          top: 16px;
-        }
-        100% {
-          top: 25px;
-        }
-      }
+      animation-iteration-count: 2;
     }
   }
 

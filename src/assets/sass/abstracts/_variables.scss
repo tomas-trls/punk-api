@@ -4,3 +4,27 @@ $color-primary--dark: #1c5276;
 $color-primary--light: #85cfef;
 $color-primary: #60bad2;
 $color-secondary: #00a2b6;
+
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

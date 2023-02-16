@@ -11,6 +11,12 @@ const MobileNav = ({
   handleSortClassicRange,
   handleAcidity,
   handleMobileNav,
+  valueABV,
+  valueYears,
+  valuePh,
+  handleRangeByABV,
+  handleRangeByYears,
+  handleRangeByPh,
 }) => {
   return (
     <div className="beers__sidebar mobile-navbar">
@@ -28,6 +34,12 @@ const MobileNav = ({
         handleSortHighAlcohol={handleSortHighAlcohol}
         handleSortClassicRange={handleSortClassicRange}
         handleAcidity={handleAcidity}
+        valueABV={valueABV}
+        valueYears={valueYears}
+        valuePh={valuePh}
+        handleRangeByABV={handleRangeByABV}
+        handleRangeByYears={handleRangeByYears}
+        handleRangeByPh={handleRangeByPh}
       />
     </div>
   );

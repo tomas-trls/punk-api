@@ -1,4 +1,8 @@
+@use "../../assets/sass/abstracts/variables" as *;
+@use "../../assets/sass/base/typography" as *;
+
 .range {
   display: flex;
   flex-direction: column;
+  margin: 15px 0;
 }

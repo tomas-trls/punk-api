@@ -16,26 +16,10 @@
     border-radius: 50%;
     transition: 1s;
     &:hover {
-      animation: jump 1s;
-      animation-fill-mode: forwards;
+      animation: jump 800ms;
       cursor: pointer;
-      @keyframes jump {
-        0% {
-          top: 15px;
-        }
-        25% {
-          top: 7px;
-        }
-        50% {
-          top: 15px;
-        }
-        75% {
-          top: 7px;
-        }
-        100% {
-          top: 15px;
-        }
-      }
+      animation-iteration-count: 2;
+      animation-fill-mode: forwards;
     }
   }
 

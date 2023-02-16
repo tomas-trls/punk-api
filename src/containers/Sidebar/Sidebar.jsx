@@ -8,25 +8,27 @@ const Sidebar = ({
   handleSortHighAlcohol,
   handleSortClassicRange,
   handleAcidity,
-  labels,
-  value,
-  min,
-  max,
-  handleInput,
+  handleRangeByABV,
+  handleRangeByYears,
+  handleRangeByPh,
+  valueABV,
+  valueYears,
+  valuePh,
 }) => {
   return (
     <div className="beers__sidebar sidebar">
       <Searchbar handleSearch={handleSearch} />
 
       <FilterList
+        handleRangeByABV={handleRangeByABV}
+        handleRangeByYears={handleRangeByYears}
+        handleRangeByPh={handleRangeByPh}
         handleSortHighAlcohol={handleSortHighAlcohol}
         handleSortClassicRange={handleSortClassicRange}
         handleAcidity={handleAcidity}
-        labels={labels}
-        min={min}
-        max={max}
-        value={value}
-        onChange={handleInput}
+        valueABV={valueABV}
+        valueYears={valueYears}
+        valuePh={valuePh}
       />
     </div>
   );

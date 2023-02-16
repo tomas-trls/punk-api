@@ -17,7 +17,9 @@ const App = () => {
 
   const [beers, setBeers] = useState(beersArr);
   const [mobileNav, setMobileNav] = useState(false);
-  const [rangeInput, setRangeInput] = useState();
+  const [rangeABVInput, setRangeABVInput] = useState(1);
+  const [rangeYearsInput, setRangeYearsInput] = useState(2010);
+  const [rangePhInput, setrangePhInput] = useState(4);
 
   useEffect(() => {
     const getBeers = async () => {
@@ -34,27 +36,47 @@ const App = () => {
   };
 
   const handleSearch = (event) => setSearchText(event.target.value);
-  const handleSortHighAlcohol = (event) => setBeersByABV(event.target.checked);
-  const handleSortClassicRange = (event) => setBeersByYear(event.target.checked);
-  const handleAcidity = (event) => setBeersByAcidity(event.target.checked);
+  const handleSortHighAlcohol = (event) => {
+    setBeersByABV(event.target.checked);
+    setRangeABVInput(6);
+  };
+  const handleSortClassicRange = (event) => {
+    setBeersByYear(event.target.checked);
+    setRangeYearsInput(2010);
+  };
+  const handleAcidity = (event) => {
+    setBeersByAcidity(event.target.checked);
+    setrangePhInput(4);
+  };
 
-  const handleRange = (event) => {
-    setRangeInput(event.target.value);
+  const handleRangeByABV = (event) => {
+    setBeersByABV(true);
+    setRangeABVInput(event.target.value);
+  };
+  const handleRangeByYears = (event) => {
+    setBeersByYear(true);
+    setRangeYearsInput(event.target.value);
+  };
+  const handleRangeByPh = (event) => {
+    setBeersByAcidity(true);
+    setrangePhInput(event.target.value);
   };
 
   const filterBeers = beers
     .filter((beer) => beer.image_url)
     .filter((beer) => beer.name.toLowerCase().includes(searchText.toLowerCase()))
-    .filter((beer) => !beersByABV || beer.abv > 6)
+    .filter((beer) => !beersByABV || beer.abv > Number.parseInt(rangeABVInput))
     .filter(
       (beer) =>
         !beersByYear ||
         new Date(
           beer.first_brewed.split("/")[1] + "/" + beer.first_brewed.split("/")[0]
-        ).getFullYear() < 2010
+        ).getFullYear() < Number.parseInt(rangeYearsInput)
     )
-    .filter((beer) => !beersByAcidity || (beer.ph && beer.ph < 4));
-
+    .filter(
+      (beer) =>
+        !beersByAcidity || (beer.ph && beer.ph < Number.parseFloat(rangePhInput))
+    );
   return (
     <div className="App beers">
       <Router>
@@ -68,11 +90,12 @@ const App = () => {
                   handleSortHighAlcohol={handleSortHighAlcohol}
                   handleSortClassicRange={handleSortClassicRange}
                   handleAcidity={handleAcidity}
-                  labels={["Alcohol by Volume", "First Brewed", "Acidity"]}
-                  min={0}
-                  max={10}
-                  value={rangeInput}
-                  handleRange={handleRange}
+                  valueABV={rangeABVInput}
+                  valueYears={rangeYearsInput}
+                  valuePh={rangePhInput}
+                  handleRangeByABV={handleRangeByABV}
+                  handleRangeByYears={handleRangeByYears}
+                  handleRangeByPh={handleRangeByPh}
                 />
                 {mobileNav && (
                   <MobileNav
@@ -81,6 +104,12 @@ const App = () => {
                     handleSortClassicRange={handleSortClassicRange}
                     handleAcidity={handleAcidity}
                     handleMobileNav={handleMobileNav}
+                    valueABV={rangeABVInput}
+                    valueYears={rangeYearsInput}
+                    valuePh={rangePhInput}
+                    handleRangeByABV={handleRangeByABV}
+                    handleRangeByYears={handleRangeByYears}
+                    handleRangeByPh={handleRangeByPh}
                   />
                 )}
                 {beers && (
