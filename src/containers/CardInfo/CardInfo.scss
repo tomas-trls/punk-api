@@ -1,14 +1,22 @@
 @use "../../assets/sass/abstracts/variables" as *;
 @use "../../assets/sass/base/typography" as *;
 
+.card-info-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
 .card-info {
   height: 100vh;
   font-family: "Inter", sans-serif;
   margin: 15px auto 25px;
   width: 90%;
-  display: flex;
+  height: 100%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   &__image-container {
@@ -229,6 +237,7 @@
   }
 
   &__brewers-tips {
+    margin: 50px auto;
     text-align: justify;
     display: flex;
     flex-direction: column;
