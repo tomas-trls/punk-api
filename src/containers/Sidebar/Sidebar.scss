@@ -41,3 +41,9 @@
   text-shadow: 1px 1px $color-black;
   flex-shrink: 0;
 }
+
+@media screen and (max-width: 958px) {
+  .sidebar {
+    display: none;
+  }
+}

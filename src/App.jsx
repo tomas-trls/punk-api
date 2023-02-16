@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
+import MobileNav from "./components/MobileNav/MobileNav";
 
 import CardInfo from "./containers/CardInfo/CardInfo";
 import Main from "./containers/Main/Main";
@@ -15,7 +16,7 @@ const App = () => {
   const [beersByAcidity, setBeersByAcidity] = useState(false);
 
   const [beers, setBeers] = useState(beersArr);
-
+  const [mobileNav, setMobileNav] = useState(false);
   const [rangeInput, setRangeInput] = useState();
 
   useEffect(() => {
@@ -27,6 +28,10 @@ const App = () => {
     };
     getBeers();
   }, []);
+
+  const handleMobileNav = () => {
+    setMobileNav(!mobileNav);
+  };
 
   const handleSearch = (event) => setSearchText(event.target.value);
   const handleSortHighAlcohol = (event) => setBeersByABV(event.target.checked);
@@ -69,7 +74,18 @@ const App = () => {
                   value={rangeInput}
                   handleRange={handleRange}
                 />
-                {beers && <Main beersArr={filterBeers} />}
+                {mobileNav && (
+                  <MobileNav
+                    handleSearch={handleSearch}
+                    handleSortHighAlcohol={handleSortHighAlcohol}
+                    handleSortClassicRange={handleSortClassicRange}
+                    handleAcidity={handleAcidity}
+                    handleMobileNav={handleMobileNav}
+                  />
+                )}
+                {beers && (
+                  <Main beersArr={filterBeers} handleMobileNav={handleMobileNav} />
+                )}
               </>
             }
           ></Route>

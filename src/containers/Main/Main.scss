@@ -1,0 +1,55 @@
+@use "../../assets/sass/abstracts/variables" as *;
+@use "../../assets/sass/base/typography" as *;
+
+.main {
+  &__menu-container {
+    margin: 15px 0;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    background-color: $color-primary--light;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 1s;
+    &:hover {
+      animation: jump 1s;
+      animation-fill-mode: forwards;
+      cursor: pointer;
+      @keyframes jump {
+        0% {
+          top: 15px;
+        }
+        25% {
+          top: 7px;
+        }
+        50% {
+          top: 15px;
+        }
+        75% {
+          top: 7px;
+        }
+        100% {
+          top: 15px;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    object-fit: contain;
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 959px) {
+  .main {
+    &__menu-container {
+      display: none;
+    }
+  }
+}

@@ -6,6 +6,11 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+@media screen and (min-width: 959px) {
+  .main__card-list {
+    justify-content: space-evenly;
+  }
 }
