@@ -21,11 +21,10 @@ This project is a challenge for the \_Nology training that I am currently underg
 
 The Punk API app was developed using React and was thoroughly tested using the React Testing Library. The following components were tested:
 
-- Main Route
 - Sidebar
 - Sliders
-- Checkboxes
-- Card Info Page
+- Cards
+- Searchbar
 
 The tests focused on ensuring that the app's components were rendering correctly and that the data from the API was being fetched and displayed accurately. All tests passed successfully, and the app is considered stable and reliable.
 
@@ -34,6 +33,8 @@ The tests focused on ensuring that the app's components were rendering correctly
 <div align="center">
 <a  href="https://tomas-trls.github.io/punk-api/">[Live Demo]</a>
 </div>
+
+![Demo of the project](http://g.recordit.co/GPPBRx0Hlw.gif)
 
 ## 🛠️ Installation
 
