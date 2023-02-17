@@ -34,7 +34,7 @@ The tests focused on ensuring that the app's components were rendering correctly
 <a  href="https://tomas-trls.github.io/punk-api/">[Live Demo]</a>
 </div>
 
-![Demo of the project](http://g.recordit.co/GPPBRx0Hlw.gif)
+![Demo of the project](imageOfPunkApi.gif)
 
 ## 🛠️ Installation
 
