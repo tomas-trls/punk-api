@@ -12,13 +12,13 @@ const RangeInput = ({
   return (
     <>
       <div className="range">
-        <label htmlFor="range" className="range__label">
+        <label htmlFor="rangeABV" className="range__label">
           ABV {">"} {valueABV}%
         </label>
         <input
           type="range"
-          name="range"
-          id="range"
+          name="rangeABV"
+          id="rangeABV"
           className="range__input"
           min={0}
           max={15}
@@ -27,13 +27,13 @@ const RangeInput = ({
         />
       </div>
       <div className="range">
-        <label htmlFor="range" className="range__label">
+        <label htmlFor="rangeYears" className="range__label">
           Years {"<"} {valueYears}
         </label>
         <input
           type="range"
-          name="range"
-          id="range"
+          name="rangeYears"
+          id="rangeYears"
           className="range__input"
           min={2008}
           max={2023}
@@ -42,13 +42,13 @@ const RangeInput = ({
         />
       </div>
       <div className="range">
-        <label htmlFor="range" className="range__label">
+        <label htmlFor="rangePh" className="range__label">
           Acidity {"<"} {valuePh}%
         </label>
         <input
           type="range"
-          name="range"
-          id="range"
+          name="rangePh"
+          id="rangePh"
           className="range__input"
           min={4.0}
           max={5.0}

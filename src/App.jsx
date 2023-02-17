@@ -19,7 +19,7 @@ const App = () => {
   const [mobileNav, setMobileNav] = useState(false);
   const [rangeABVInput, setRangeABVInput] = useState(1);
   const [rangeYearsInput, setRangeYearsInput] = useState(2010);
-  const [rangePhInput, setrangePhInput] = useState(4);
+  const [rangePhInput, setrangePhInput] = useState(5);
 
   useEffect(() => {
     const getBeers = async () => {

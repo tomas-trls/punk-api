@@ -1,75 +1,53 @@
 <div align="center">
-    
+
 [![wakatime](https://wakatime.com/badge/github/tomas-trls/Punk-API.svg?style=for-the-badge)](https://wakatime.com/badge/github/tomas-trls/Punk-API?style=for-the-badge)
+
 </div>
 
-# 🌟 Punk API 🍻
+# 🎸 PUNK API 🍻
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a challenge for the \_Nology training that I am currently undergoing. The PUNK API is a web application that fetches beers with their names, descriptions, images, tagline, and other details from the <a href="https://punkapi.com/documentation/v2">Punk API</a>. The app features a main page with a sidebar that includes a search bar, three sliders, and three checkboxes, and the cards of each beer.It also has details page when a card is click that will inform the user with more information about each beer.
 
-## Available Scripts
+## ⚙️ Features
 
-In the project directory, you can run:
+- Search for beers by name using the search bar
+- Filter beers by alcohol by volume using the first slider
+- Filter beers by the year they were brewed using the second slider
+- Filter beers by pH level using the third slider
+- Filter beers by specific alcohol by volume, brewed year, or pH level using the checkboxes
+- Fully responsive design
 
-### `npm start`
+## 🔮 Testing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Punk API app was developed using React and was thoroughly tested using the React Testing Library. The following components were tested:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Main Route
+- Sidebar
+- Sliders
+- Checkboxes
+- Card Info Page
 
-### `npm test`
+The tests focused on ensuring that the app's components were rendering correctly and that the data from the API was being fetched and displayed accurately. All tests passed successfully, and the app is considered stable and reliable.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🖥️ Demo
 
-### `npm run build`
+<div align="center">
+<a  href="https://tomas-trls.github.io/punk-api/">[Live Demo]</a>
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the app locally, please follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Clone the repository to your local machine.
+- Install the necessary dependencies using npm install.
+- Start the server using npm start.
+- Open http://localhost:3000 in your web browser.
 
-### `npm run eject`
+## 📚 Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To use the app, simply navigate to the main page and begin searching and filtering beers. Click on any beer card to access the card info page, where you can find more details about the beer.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧑‍💻 Author
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was created by Tomas Truyols. You can find me on GitHub at @tomas-trls.
