@@ -51,4 +51,4 @@ To use the app, simply navigate to the main page and begin searching and filteri
 
 ## 🧑‍💻 Author
 
-This project was created by Tomas Truyols. You can find me on GitHub at @tomas-trls.
+<strong>[@tomas-trls](https://www.github.com/tomas-trls) / tomast25@hotmail.com </strong>
