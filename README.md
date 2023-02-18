@@ -6,7 +6,7 @@
 
 # 🎸 PUNK API 🍻
 
-This project is a challenge for the \_Nology training that I am currently undergoing. The PUNK API is a web application that fetches beers with their names, descriptions, images, tagline, and other details from the <a href="https://punkapi.com/documentation/v2">Punk API</a>. The app features a main page with a sidebar that includes a search bar, three sliders, and three checkboxes, and the cards of each beer.It also has details page when a card is click that will inform the user with more information about each beer.
+This project is a challenge for the \_Nology training that I am currently undergoing. The PUNK API is a web application that fetches beers with their names, descriptions, images, tagline, and other details from the <a href="https://punkapi.com/documentation/v2">Punk API</a>. The app features a main page with a sidebar that includes a search bar, three sliders, and three checkboxes, and the cards of each beer. Each beer also have a details page when click on that will inform the user with more information about each beer.
 
 ## ⚙️ Features
 
